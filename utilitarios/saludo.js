@@ -11,7 +11,15 @@ saludar=function(){
     let mensajeBienvenida="Bienvenido "+nombre+" "+apellido;
     mostrarTexto("lblResultado",mensajeBienvenida);
 
+    mostrarImagen("imgSaludo","./imagenes/saludos-hola.gif");
+
 }
+
+mostrarImagen=function(idComponente,rutaImagen){
+    let componente= document.getElementById(idComponente);
+    componente.src= rutaImagen;
+}
+
 recuperarTexto=function(idComponente){
     let componente;
     let valorIngresado;
