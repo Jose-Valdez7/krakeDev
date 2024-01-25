@@ -13,6 +13,8 @@ saludar=function(){
 
     mostrarImagen("imgSaludo","./imagenes/saludos-hola.gif");
 
+    mostrarTextoEnCaja("txtNombre","");
+
 }
 
 mostrarImagen=function(idComponente,rutaImagen){
@@ -43,4 +45,9 @@ recuperarFloat=function(idComponente){
 mostrarTexto=function(idComponente,mensaje){
     let componente= document.getElementById(idComponente);
     componente.innerText= mensaje;
+}
+
+mostrarTextoEnCaja=function(idComponente,mensaje){
+    let componente=document.getElementById(idComponente);
+    componente.value= mensaje;
 }
