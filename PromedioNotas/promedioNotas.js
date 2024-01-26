@@ -5,4 +5,9 @@ calcularPromedioNotas=function(){
     let promedio=calcularPromedio(nota1,nota2,nota3);
     let promRedondeado=promedio.toFixed(2);
     mostrarTexto("lblPromedio",promRedondeado);
+    if(promedio>7){
+        mostrarImagen("lblImagen","./imagenes/exito.gif");
+    }else{
+        mostrarImagen("lblImagen","./imagenes/fail.gif");
+    }
 }
