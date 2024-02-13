@@ -13,7 +13,7 @@ validarEstructura=function(placa){
 esValido0=function(placa,idComponenteError){
     hayErrrores=false
     let longitud=placa.length;
-    if(longitud<7 || longitud>8){
+    if(longitud!=7 && longitud!=8){
         mostrarTexto(idComponenteError,"LA PLACA DEBE TENER 7 U 8 CARACTERES");
         hayErrrores=true;
     }
@@ -138,4 +138,36 @@ esValido8=function(placa,idComponenteError){
         mostrarTexto(idComponenteError,"");
     }
     return !hayErrrores;
+}
+
+obtenerProvincia=function(placa){
+    let provincias = {
+        A:"Azuay",
+        B:"Bolivar",
+        U:"Cañar",
+        C:"Carchi",
+        X:"Cotopaxi",
+        H:"Chimborazo",
+        O:"El Oro",
+        E:"Esmeraldas",
+        W:"Galapagos",
+        G:"Guayas",
+        I:"Imbabura",
+        L:"Loja",
+        R:"Los Rios",
+        M:"Manabi",
+        V:"Morona Santiago",
+        N:"Napo",
+        S:"Pastaza",
+        P:"Pichincha",
+        K:"Sucumbios",
+        Q:"Orellana",
+        T:"Tungurahua",
+        Z:"Zamora Chinchipe",
+        Y:"Santa Elena",   
+      };
+    
+    let letra = placa.charAt(0)
+    return provincias[letra] || "null";
+    
 }
