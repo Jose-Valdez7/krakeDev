@@ -124,21 +124,16 @@ esValido7=function(placa,idComponenteError){
 esValido8=function(placa,idComponenteError){
     hayErrrores=false
     let longitud=placa.length;
-    if(longitud==8){
-        let num4=placa.charAt(7);
-        let num04=esDigito(num4);
-        if(num04 == false){
+    if(longitud===8 && !/[0-9]/.test(placa.charAt(7))){
             mostrarTexto(idComponenteError,"OCTAVO CARACTER DEBE SER UN NUMERO");
             hayErrrores=true;
         }
-    }else {
-        hayErrrores= true;
-    }
     if(hayErrrores==false){
         mostrarTexto(idComponenteError,"");
     }
     return !hayErrrores;
 }
+
 
 obtenerProvincia=function(placa){
     let provincias = {
@@ -168,6 +163,58 @@ obtenerProvincia=function(placa){
       };
     
     let letra = placa.charAt(0)
-    return provincias[letra] || "null";
+    return provincias[letra] || "null";  
+}
+
+obtenerTipoVehiculo=function(placa){
+    let vehiculo = {
+        A:"Vehiculo Comercial",
+        Z:"Vehiculo Comercial",
+        E:"Vehiculo Gubernamental",
+        X:"Vehiculo de Uso Oficial",
+        S:"Vehiculos del gobierno Provincial",
+        M:"Vehiculos Municipales",
+        O:"Vehiculo Particular", 
+        B:"Vehiculo Particular", 
+        C:"Vehiculo Particular",
+        D:"Vehiculo Particular",
+        F:"Vehiculo Particular",
+        G:"Vehiculo Particular", 
+        H:"Vehiculo Particular",
+        I:"Vehiculo Particular",
+        J:"Vehiculo Particular",
+        K:"Vehiculo Particular",
+        L:"Vehiculo Particular",
+        N:"Vehiculo Particular",
+        P:"Vehiculo Particular",
+        Q:"Vehiculo Particular",
+        R:"Vehiculo Particular",
+        T:"Vehiculo Particular",
+        U:"Vehiculo Particular",
+        V:"Vehiculo Particular",
+        W:"Vehiculo Particular",
+        Y:"Vehiculo Particular",
     
+      };
+    
+    let letra = placa.charAt(1)
+    return vehiculo[letra] || "null";  
+}
+
+obtenerDiaPicoYPlaca=function(placa){
+    let numeroFinal = {
+        1:"Lunes",
+        2:"Lunes",
+        3:"Martes",
+        4:"Martes",
+        5:"Miercoles",
+        6:"Miercoles",
+        7:"Jueves",
+        8:"Jueves",
+        9:"Viernes",
+        0:"Viernes",
+      };
+    let cadena=placa.length-1; 
+    let numero = placa.charAt(cadena);
+    return numeroFinal[numero] || "null";  
 }
