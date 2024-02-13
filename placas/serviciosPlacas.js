@@ -124,10 +124,16 @@ esValido7=function(placa,idComponenteError){
 esValido8=function(placa,idComponenteError){
     hayErrrores=false
     let longitud=placa.length;
-    if(longitud===8 && !/[0-9]/.test(placa.charAt(7))){
+    if(longitud==8){
+        let num4=placa.charAt(7);
+        let num04=esDigito(num4);
+        if(num04 == false){
             mostrarTexto(idComponenteError,"OCTAVO CARACTER DEBE SER UN NUMERO");
             hayErrrores=true;
         }
+    }else {
+        hayErrrores= true;
+    }
     if(hayErrrores==false){
         mostrarTexto(idComponenteError,"");
     }
