@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="placas.js"></script>
+        <script src="serviciosPlacas.js"></script>
+        <script src="utilitarios.js"></script>
+        <script src="utilitariosCadenas.js"></script>
+        <link href="placas.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="principal">
+            <div class="logo">
+                <img src="./imagenes/logo.png" width="80%" />
+            </div>
+            <div class="contenido">
+                <div class="titulo">
+                    VALIDADOR
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        INGRESE PLACA
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtPlaca"/>
+                        <div class="error" id="lblError1"></div>
+                        <div class="error" id="lblError2"></div>
+                        <div class="error" id="lblError3"></div>
+                        <div class="error" id="lblError4"></div>
+                        <div class="error" id="lblError5"></div>
+                        <div class="error" id="lblError6"></div>
+                        <div class="error" id="lblError7"></div>
+                        <div class="error" id="lblError8"></div>
+                        <div class="error" id="lblError9"></div>
+                    </div>
+                </div>
+                
+              
+                <div class="botones">
+                    <div class="contenedorBoton">
+                        <input type="button" value="VALIDAR" 
+                        class="estiloBoton" onclick="validarPlaca()"/>
+                    </div>
+                    <div class="contenedorBoton">
+                        <input type="button" value="LIMPIAR" 
+                        class="estiloBoton" onclick="limpiar()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="areaResultado">
+                <div class="resultado">
+                    <h2></h2>
+                    <h3 id="lblValidacion"> </h3>
+                </div>
+                <div class="resultado">
+                    <h3></h3>
+                    <h3 id="lblErrores"></h3>
+                </div>
+               
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
