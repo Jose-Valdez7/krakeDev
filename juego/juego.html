@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="juego.js"></script>
+        <script src="servicioJuegos.js"></script>
+        <script src="utilitarios.js"></script>
+        <link href="juego.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="principal">
+            <div class="logo">
+                <img src="./imagenes/lets-play-the-game-vector.jpg" width="80%" />
+            </div>
+            <div class="contenido">
+                <div class="titulo">
+                    JUEGA PIEDRA, PAPEL O TIJERA
+                </div>
+                <div class="imagenResultado">
+                    <div>
+                        <img id="imgJuego"/>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="contenedorBoton">
+                        <img src="./imagenes/piedra.png" class="imagenBoton" onclick="jugar('piedra');"/>
+                        <img src="./imagenes/papel.png" class="imagenBoton" onclick="jugar('papel');" />
+                        <img src="./imagenes/tijera.png" class="imagenBoton" onclick="jugar('tijera');" />
+                    </div>
+                    <div class="contenedorBoton">
+                        <input type="button" value="NUEVA PARTIDA" 
+                        class="estiloBoton" onclick="limpiar()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="areaResultado">
+                <div class="resultado">
+                    <h3 id="lblGanador"> </h3><br/>
+                </div>
+                <div class="puntos">
+                    <h3 id="lblPuntosUsuario">0</h3><br/>
+                </div>
+                <div class="puntos">
+                    <h3 id="lblPuntosComputador">0</h3><br/>
+                </div>
+                <div class="final">
+                    <h3 id="lblMensaje"></h3><br/>
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
