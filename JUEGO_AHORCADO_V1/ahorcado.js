@@ -43,14 +43,37 @@ guardarPalabra=function(){
 }
 
 mostrarLetra=function(letra,posicion){
-    let letraIterada
-    let existeLetra=false;
-    for(let i=0;i<cadena.length;i++){
-        letraIterada=cadena.charAt(i);
-        if(letraIterada==letra){
-            mostrarTextoEnCaja(posicion,letraIterada);
-        }
-    }
     
+    if(posicion==0){
+        posicionCorrec=mostrarTexto("div0",letra);
+    }else if(posicion==1){
+        mostrarTexto("div1",letra);
+    }else if(posicion==2){
+        mostrarTexto("div2",letra);
+    }else if(posicion==3){
+     mostrarTexto("div3",letra);
+    }else if(posicion==4){
+        mostrarTexto("div4",letra);
+    }
+ }
 
+    
+validar=function(letraValidar){
+    let letrasEncontradas=0;
+    for(let i=0;i<palabraSecreta.length;i++){
+        let letraPalabraSecreta=palabraSecreta.charAt(i);
+        if(letraPalabraSecreta==letraValidar){
+            mostrarLetra(letraValidar,i);
+            letrasEncontradas=letrasEncontradas+1;
+        }
+}
+}
+
+ingresarLetra=function(){
+    let letra= recuperarTexto("txtLetra");
+    if(esMayuscula(letra)==true){
+        validar(letra);
+    }else{
+        alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS")
+    }
 }
