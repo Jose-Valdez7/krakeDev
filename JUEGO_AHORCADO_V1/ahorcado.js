@@ -1,5 +1,8 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
 let palabraSecreta=""; 
+let intentos=0;
+let coincidencias=0;
+let errores=0;
 
 esMayuscula=function(caracter){
     let letra=caracter
@@ -76,4 +79,23 @@ ingresarLetra=function(){
     }else{
         alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS")
     }
+    intentos=intentos+1
+    for(let i=0;i<palabraSecreta.length;i++){
+        let letraPalabraSecreta=palabraSecreta.charAt(i);
+        if(letraPalabraSecreta==letra){
+            coincidencias=coincidencias+1}
+        }
+    for(let i=0;i<palabraSecreta.length;i++){
+        let letraPalabraSecreta=palabraSecreta.charAt(i);
+        if(letraPalabraSecreta!=letra){
+            alert("LA LETRA NO ES PARTE DE LA PALABRA");
+            errores=errores+1;
+        break;
+        }}
+    if(coincidencias==5){
+        alert("HAS GANADO");
+    }else if(intentos>=10){
+        alert("HAS PERDIDO");
+    }
+        
 }
