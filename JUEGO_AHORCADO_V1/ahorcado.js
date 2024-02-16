@@ -85,17 +85,38 @@ ingresarLetra=function(){
         if(letraPalabraSecreta==letra){
             coincidencias=coincidencias+1}
         }
-    for(let i=0;i<palabraSecreta.length;i++){
-        let letraPalabraSecreta=palabraSecreta.charAt(i);
-        if(letraPalabraSecreta!=letra){
+    
+        if(!palabraSecreta.includes(letra)){
             alert("LA LETRA NO ES PARTE DE LA PALABRA");
             errores=errores+1;
-        break;
-        }}
+            
+        }
     if(coincidencias==5){
-        alert("HAS GANADO");
+        mostrarImagen("ahorcadoImagen","./ganador.gif");
     }else if(intentos>=10){
-        alert("HAS PERDIDO");
+        mostrarImagen("ahorcadoImagen","./gameOver.gif");
     }
-        
+        mostrarAhorcado();
+}
+
+mostrarAhorcado=function(){
+    if(errores==1){
+        mostrarImagen("ahorcadoImagen","./ahorcado_01.png");
+    }else if(errores==2){
+        mostrarImagen("ahorcadoImagen","./ahorcado_02.png");
+    }else if(errores==3){
+        mostrarImagen("ahorcadoImagen","./ahorcado_03.png");
+    }else if(errores==4){
+        mostrarImagen("ahorcadoImagen","./ahorcado_04.png");
+    }else if(errores==5){
+        mostrarImagen("ahorcadoImagen","./ahorcado_05.png");
+    }else if(errores==6){
+        mostrarImagen("ahorcadoImagen","./ahorcado_06.png");
+    }else if(errores==7){
+        mostrarImagen("ahorcadoImagen","./ahorcado_07.png");
+    }else if(errores==8){
+        mostrarImagen("ahorcadoImagen","./ahorcado_08.png");
+    }else if(errores==9){
+        mostrarImagen("ahorcadoImagen","./ahorcado_09.png");
+    }
 }
