@@ -41,3 +41,16 @@ guardarPalabra=function(){
     console.log("Palabra ingresada: ",palabraSecreta);
 
 }
+
+mostrarLetra=function(letra,posicion){
+    let letraIterada
+    let existeLetra=false;
+    for(let i=0;i<cadena.length;i++){
+        letraIterada=cadena.charAt(i);
+        if(letraIterada==letra){
+            mostrarTextoEnCaja(posicion,letraIterada);
+        }
+    }
+    
+
+}
