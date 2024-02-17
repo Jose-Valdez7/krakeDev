@@ -5,6 +5,13 @@ mostrarNumeros=function(){
     }
     console.log("despues del for");
 }
+probar=function(){
+    for (let i=5;i<=40;i+=5){
+        let imprimir=i
+        console.log(imprimir);
+    }
+    console.log("despues del for")
+}
 
 mostrarNumeros2=function(){
     console.log("antes del for");
