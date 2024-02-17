@@ -83,7 +83,7 @@ tbody tr:nth-child(odd) {
   }
   
   tbody tr:nth-child(even) {
-    background-color: #6a51cf;
+    background-color: #13c5e0;
   }
   
   tbody tr {
@@ -91,11 +91,35 @@ tbody tr:nth-child(odd) {
   }
   
   table {
-    background-color: #0b0c0c;
+    background-color: #199191;
     width: 100%;
+    border-collapse: separate;
+    border: 2px solid #39b669;
+    font-family: "Helvetica";
+    margin: auto;
+  }
+  td,th{
+    width: 25%;
+    padding: 0.5em;
+    vertical-align: top;
+    border-bottom: 1px solid #232623;
+    border-top: 1px solid #232623;
+    border-spacing: 0;
   }
   td{
+    background-color: rgb(13, 119, 52);
     text-align: center;
+    border-bottom: 2px;
+    font-size: 15px;
+    color: #b3aca9;
+    font-weight: bold;
+  }
+  th{
+    text-align: center;
+    background-color: #19118b;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: aliceblue;
   }
   .areaTabla{
     margin-top: 20px;
