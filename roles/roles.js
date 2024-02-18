@@ -166,6 +166,31 @@ guardar=function(){
         }
         if(esNuevo==false){
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA "+cedula);
+            if(esNuevo==false){
+                let busqueda=buscarEmpleado(cedula);
+                busqueda.nombre=nombre;busqueda.apellido=apellido;busqueda.sueldo=sueldo
+                alert("EMPLEADO MODIFICADO EXITOSAMENTE")
+                mostrarEmpleados();
+                deshabilitarCajasYBtonGuardar();}
         }
+        
+    }
+    esNuevo=false
+}
+
+ejecutarBusqueda=function(){
+    let cedula =recuperarTexto("txtBusquedaCedula");
+    let busqueda=buscarEmpleado(cedula);
+    if(busqueda==null){
+        alert("EMPLEADO NO EXISTE");
+    }else{
+        mostrarTextoEnCaja("txtCedula",busqueda.cedula);
+        mostrarTextoEnCaja("txtNombre",busqueda.nombre);
+        mostrarTextoEnCaja("txtApellido",busqueda.apellido);
+        mostrarTextoEnCaja("txtSueldo",busqueda.sueldo);
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        deshabilitarComponente("txtCedula");
     }
 }
