@@ -215,3 +215,30 @@ buscarPorRol=function(){
         mostrarTexto("infoSueldo",busqueda.sueldo);
     }
 }
+
+calcularAporteEmpleado=function(sueldoEmpleado){
+    let sueldoB=(sueldoEmpleado*9.45)/100;
+    return sueldoB
+}
+
+calcularValorAPagar=function(sueldoEmpleado,aporteIess,descuento){
+    let total=sueldoEmpleado-aporteIess-descuento;
+    return total
+}
+
+calcularRol=function(){
+    let sueldo=recuperarTextoDiv("infoSueldo");
+    let sueldoF=recuperarFloatDiv("infoSueldo");
+    let descuento=recuperarFloat("txtDescuentos");
+    let descuentoFloat= /^-?\d*(\.\d+)?$/;
+    if(descuento>0 && descuento<sueldoF && descuentoFloat.test(descuento)){
+        descuento=descuento
+        mostrarTexto("lblErrorDescuentos","");
+    }else{
+        mostrarTexto("lblErrorDescuentos","Descuento entre 0 y "+sueldo);
+    }
+    let aporte=calcularAporteEmpleado(sueldo);
+    mostrarTexto("infoIESS",aporte);
+    let total=calcularValorAPagar(sueldo,aporte,descuento);
+    mostrarTexto("infoPago",total);
+}

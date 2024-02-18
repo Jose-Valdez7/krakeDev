@@ -78,3 +78,24 @@ deshabilitarCajasYBtonGuardar=function(){
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+
+recuperarTextoDiv=function(divComponente){
+    let componente;
+    let valorIngresado;
+    componente=document.getElementById(divComponente);
+    valorIngresado=componente.textContent;
+    return valorIngresado;
+}
+
+ recuperarFloatDiv = function(divComponente){
+    let valorCaja= recuperarTextoDiv(divComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
+ }
+
+ recuperarIntDiv = function(divComponente){
+    let valorCaja= recuperarTextoDiv(divComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
+ }
+ 
