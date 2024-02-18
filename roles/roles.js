@@ -3,6 +3,7 @@ let empleados = [
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
     {cedula:"1302611340",nombre:"Angel",apellido:"Rodriguez",sueldo:800.0}
 ];
+let roles=[];
 
 let esNuevo = false;
 
@@ -17,6 +18,7 @@ mostrarOpcionRol=function(){
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardarRol");
 }
 mostrarOpcionResumen=function(){
     mostrarComponente("divResumen");
@@ -241,4 +243,52 @@ calcularRol=function(){
     mostrarTexto("infoIESS",aporte);
     let total=calcularValorAPagar(sueldo,aporte,descuento);
     mostrarTexto("infoPago",total);
+    if(total==total){
+        habilitarComponente("btnGuardarRol");
+    }
+}
+
+buscarRol=function(cedula){
+    let elementoRol;
+    let nuevoRol=null;
+    for(let i=0;i<roles.length;i++){
+        elementoRol=roles[i];
+        if(elementoRol.cedula==cedula){
+            nuevoRol=elementoRol;
+            break;
+        }
+    }
+    return nuevoRol;  
+}
+agregarRol=function(rol){
+let nuevoRol=buscarRol(rol.cedula);
+    if(nuevoRol==null){
+        roles.push(rol);
+        alert("ROL AGREGADO EXITOSAMENTE");
+    }else{
+        alert("ERROR ROL YA EXISTE");
+    }
+}
+
+calcularAporteEmpleador=function(sueldo){
+    let pagoIess=(sueldo*11.15)/100;
+    return pagoIess;
+}
+
+guardarRol=function(){
+    let valorAPagar=recuperarFloatDiv("infoPago");
+    let aporteIessEmpleado=recuperarFloatDiv("infoIESS");
+    let nombre=recuperarTextoDiv("infoNombre");
+    let cedula=recuperarTextoDiv("infoCedula");
+    let sueldo=recuperarFloatDiv("infoSueldo");
+    let aporteIessEmpleador=calcularAporteEmpleador(sueldo);
+    let nuevoRol={};
+        nuevoRol.cedula=cedula;
+        nuevoRol.nombre=nombre;
+        nuevoRol.sueldo=sueldo;
+        nuevoRol.valorAPagar=valorAPagar;
+        nuevoRol.aporteEmpleado=aporteIessEmpleado;
+        nuevoRol.aporteEmpleador=aporteIessEmpleador;
+    agregarRol(nuevoRol);
+    deshabilitarComponente("btnGuardarRol");
 }
