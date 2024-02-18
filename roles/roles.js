@@ -203,3 +203,15 @@ limpiar=function(){
     esNuevo=false
     deshabilitarCajasYBtonGuardar();
 }
+
+buscarPorRol=function(){
+    let cedula =recuperarTexto("txtBusquedaCedulaRol");
+    let busqueda=buscarEmpleado(cedula);
+    if(busqueda==null){
+        alert("EMPLEADO NO EXISTE");
+    }else{
+        mostrarTexto("infoCedula",busqueda.cedula);
+        mostrarTexto("infoNombre",busqueda.nombre+" "+busqueda.apellido);
+        mostrarTexto("infoSueldo",busqueda.sueldo);
+    }
+}
