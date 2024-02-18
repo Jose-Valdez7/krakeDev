@@ -9,6 +9,11 @@ mostrarOpcionEmpleado=function(){
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
 mostrarOpcionRol=function(){
     mostrarComponente("divRol");
@@ -38,4 +43,12 @@ mostrarEmpleados=function(){
     }
     contenidoTabla+="</table>";
     cmpTabla.innerHTML=contenidoTabla;
+}
+
+ejecutarNuevo=function(){
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
 }
