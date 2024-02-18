@@ -166,6 +166,11 @@ guardar=function(){
         if(esNuevo==true){
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
+            deshabilitarComponente("txtCedula");
+            deshabilitarComponente("txtNombre");
+            deshabilitarComponente("txtApellido");
+            deshabilitarComponente("txtSueldo");
+            deshabilitarComponente("btnGuardar");
         }
         if(esNuevo==false){
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA "+cedula);
