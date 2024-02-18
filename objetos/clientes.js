@@ -66,7 +66,7 @@ agregarCliente=function(cliente){
 buscarCliente=function(cedula){
     let elementoCliente 
     let clienteEncontrado= null;
-    for(i=0;i<clientes.length;i++){
+    for(let i=0;i<clientes.length;i++){
         elementoCliente=clientes[i];
         if(elementoCliente.cedula==cedula){
             clienteEncontrado=elementoCliente;
