@@ -194,3 +194,12 @@ ejecutarBusqueda=function(){
         deshabilitarComponente("txtCedula");
     }
 }
+
+limpiar=function(){
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+    esNuevo=false
+    deshabilitarCajasYBtonGuardar();
+}
